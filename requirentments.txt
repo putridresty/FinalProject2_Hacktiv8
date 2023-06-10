@@ -1,0 +1,8 @@
+numpy==1.23.0
+pandas==2.0.2
+seabor==0.12.2
+matplotli==3.7.1
+scikit-learn==1.2.2
+plotly==5.14.1
+pickl==4.0
+streamli==1.23.1
