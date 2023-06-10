@@ -3,31 +3,31 @@ import streamlit as st
 
 model = pickle.load(open('rain_predict.sav', 'rb'))
 
-st.title("Prediksi Hujan di Australia")
+st.title("Prediksi Hujan Esok Hari di Australia")
 
 # Membagi visualisasi menjadi 2 kolom
 col1, col2 = st.columns(2)
 
 with col1:
-    RainToday = st.number_input('cuaca hari ini (0=tidak hujan, 1=hujan)') #yesno ques
+    RainToday = st.number_input('cuaca hari ini (0=tidak hujan/1=hujan)') 
 with col2:
     Rainfall = st.number_input('Berapa curah hujan hari ini?')
 with col1:
-    WindGustSpeed = st.number_input('Berapa nilai kecepatan angin pada hari sebelumnya?') #input select
+    WindGustSpeed = st.number_input('Berapa nilai kecepatan angin pada hari sebelumnya?') 
 with col2:
-    WindSpeed9am = st.number_input('Berapa nilai kecepatan angin di sekitar jam 9 pagi?') #input selecr
+    WindSpeed9am = st.number_input('Berapa nilai kecepatan angin di sekitar jam 9 pagi?') 
 with col1:
-    WindSpeed3pm = st.number_input('Berapa nilai kecepatan angin di sekitar jam 3 sore?') #input select
+    WindSpeed3pm = st.number_input('Berapa nilai kecepatan angin di sekitar jam 3 sore?') 
 with col2:
     Humidity9am = st.number_input('Berapa nilai kelembapan di sekitar jam 9 Pagi?')
 with col1:
     Humidity3pm = st.number_input('Berapa nilai kelembapan di sekitar jam 3 sore?')
 with col2:
-    Month = st.number_input('Bulan ke berapakah saat ini?')    
+    Month = st.number_input('Bulan ke berapakah saat ini? (1-12)')    
 
 predict = ''
 
-if st.button("Prediksi Hujan pada Esok Hari"):
+if st.button("Prediksi"):
     predict = model.predict(
         [[RainToday, Rainfall, WindGustSpeed,
        WindSpeed9am, WindSpeed3pm, Humidity9am, Humidity3pm, Month]]
