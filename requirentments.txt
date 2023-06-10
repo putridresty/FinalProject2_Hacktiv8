@@ -1,8 +1,8 @@
 numpy==1.23.0
 pandas==2.0.2
-seabor==0.12.2
-matplotli==3.7.1
+seaborn==0.12.2
+matplotlib==3.7.1
 scikit-learn==1.2.2
 plotly==5.14.1
 pickle==4.0
-streamli==1.23.1
+streamlit==1.23.1
